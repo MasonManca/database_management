@@ -1,0 +1,22 @@
+.navbar-toggler{
+    align-items: right;
+    justify-content: right;
+    min-width: auto;
+    min-height: auto;
+}
+.navbar-brand{
+    align-items: right;
+    justify-content: right;
+    padding: 1.2rem 20rem 0 0;
+    font-size: 2.5rem;
+    min-width: 10rem;
+}
+*{
+    background-color: #212529;
+}
+.navbar{
+    background-color: #212529;
+    padding: 0;
+    margin: 0;
+}
+

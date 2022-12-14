@@ -1,0 +1,17 @@
+*{
+    background-color: #212529;
+}
+
+#table-name{
+    background-color: #212529;
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: white;
+    background-color: transparent; 
+ 
+    @include hover {
+       color: red;
+    }
+ }
