@@ -12,6 +12,8 @@ const Home: React.FC = () => {
     const [time_of_week, setTimeOfWeek] = useState([]);
     const [sets, setSets] = useState([]);
     const [reps, setReps] = useState([]);
+    const [splitExerciseID, setSplitExerciseID] = useState([]);
+    const [inputData, setInputData] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:3001/YourSplit')
@@ -27,6 +29,39 @@ const Home: React.FC = () => {
         }).catch(err => console.log(err));
     }, []);
 
+  useEffect(() => {
+    fetch('http://localhost:3001/InsertSplitExercise')
+    .then(res => res.json())
+    .then(data => {
+        setSplitExerciseID(data);
+        console.log(data);
+    }).catch(err => console.log(err));
+  }, []);
+
+
+  //   useEffect(() => {
+  //     let ID = window.location.href.split('/').pop();        
+  //     fetch(`http://localhost:3001/YourSplit/${ID}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //         console.log(data);
+  //         setInputData(data);
+  //     }).catch(err => console.log(err));
+
+  // }, []);
+
+    useEffect(() => {
+      let ID = window.location.href.split('/').pop();        
+      fetch(`http://localhost:3001/YourSplit/${ID}`)
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+          setSplitExerciseID(data);
+      }).catch(err => console.log(err));
+
+  }, []);
+
+
     return (
         <div className='Home'> 
         <main role="main">
@@ -39,6 +74,7 @@ const Home: React.FC = () => {
               <p>
                 <NavLink to="/Tips" className="btn btn-primary my-2">See Tips for all exercises</NavLink>
                 <br />
+                <NavLink to="/InsertSplitExercise" className="btn btn-secondary my-2">Add a new Exercise to the DataBase?</NavLink>
                 <br />
               </p>
             </div>
@@ -61,12 +97,12 @@ const Home: React.FC = () => {
           </thead>
           <tbody>
         
-            {exerciseID.map((exercise: any) => {
+            {splitExerciseID.map((split_item: any) => {
                 return (
                     <tr>
                         <td>Test</td>
-                        <td className="bg-light">{exercise.exercise_name}</td>
-                        
+                        <td className="bg-light">{split_item.split_id}</td>
+                        <td className="bg-light">{split_item.exercise_name}</td>                        
                     </tr>
                 )
             })}
@@ -95,7 +131,7 @@ const Home: React.FC = () => {
             <br />
           </div>
         </div>
-    </div>
+</div>
     );
 };
 

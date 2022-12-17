@@ -2,16 +2,6 @@
 -- CPSC 321 Section 01
 -- Dr.Bowers
 -- 22 November 22
-/*
-************************** Main Relations **************************
--- Exercises( exercise_id, exercise_name, muscles_worked, desc, compound_or_accessory)
--- AllSplits( split_id, split_name, muscle_group_split, times_per_week, split_desc)
--- YourSplit( split_id, exercise_id, times_per_week, time_of_week, sets, reps )
--- ScientificResearch( exercise_id, muscles_worked, risk, reward, optimal_score, num_fibers )
--- Tips( exercise_id, tip_desc )
--- CompoundOrAccessory( exercise_id, compound_or_accessory, intensity, risk_val, reward_val)
--- BestForMuscleGroup( exercise_id, exercise_name, muscle_group, num_fibers, optimal_score)
-*/
 
 -- -- CREATE TABLE statements:
 DROP TABLE IF EXISTS ScientificResearch;

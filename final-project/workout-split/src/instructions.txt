@@ -1,0 +1,9 @@
+This file holds the instructions to run this project.
+
+1. Download MysqlWorkbench and create the relations following the .sql schema and script files
+2. Install npm, yarn, and node. (latest versions is fine)
+3. inside of the server directory, open a terminal and type "node app.js"
+4. Then inside of the src folder, type yarn start in order to run it on local host
+Note: if this does not work, try entering "unset HOST" into the command line and trying again
+5. If not already installed, compilers for HTML, css, tsx, and js files need to be installed
+Hopefully, good to go!

@@ -21,8 +21,6 @@ import './Exercises.css';
             }).catch(err => console.log(err));
             }, []); // if empty, works on load
 
-        
-
         return (
             <div className ="/Exercises">
             <body className = 'main-body position-absolute'>
